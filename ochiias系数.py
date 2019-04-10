@@ -33,9 +33,10 @@ data = {
         # "list1":[93,62,51,93,75,82,93,62,65,51,86,89,100]
     "case_train":a,
     "keywords":keywords
-
 }
 data=json.dumps(data,ensure_ascii=True)
+
+# data=json.dumps(data,ensure_ascii=True)
 
 headers = {'Content-Type': 'application/json'}
 response = requests.post(url,data,headers=headers)
