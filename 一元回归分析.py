@@ -21,5 +21,5 @@ y_hat = lr.predict(x)
 # 打印出图
 plt.scatter(x,y)
 plt.plot(x, y_hat)
-
+plt.show()
 
