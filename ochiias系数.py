@@ -18,15 +18,16 @@ case_train1 = np.array(case_train)
 # print(case_train1)
 # 将矩阵反转为a
 a = case_train1.T
+# numpy对象无法被json序列化作为参数传进去，
+# 因此先转化为list,接口那边接收到后再转为numpy对象
 a = a.tolist()
-print(a)
+
 
 # 读取关键字
 keywords = pd.read_csv("{}".format(filename), nrows=0)
 keywords = keywords.columns
 keywords = list(keywords)
 
-print(keywords)
 data = {
         # "list1":[x for x in range(1000000)]
         # "list1":[93,62,51,93,75,82,93,62,65,51,86,89,100]
