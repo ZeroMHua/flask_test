@@ -23,6 +23,7 @@ a = case_train1.T
 a = a.tolist()
 
 
+
 # 读取关键字
 keywords = pd.read_csv("{}".format(filename), nrows=0)
 keywords = keywords.columns
