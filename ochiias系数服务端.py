@@ -13,6 +13,11 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return "ochiias算法"
+@app.route('/param1', methods=['GET', 'POST'])
+def index1():
+    data = request.json
+    a = data["param1"]
+    return jsonify(param1=a)
 
 @app.route('/ochiias', methods=['GET', 'POST'])
 def getstr():
@@ -127,5 +132,6 @@ def getstr():
 
 if __name__ == '__main__':
     # app.run(debug=True,host='0.0.0.0',port=8888)
-    app.run(debug=True,host='192.168.11.220',port=9900)
+    app.run(debug=True)
+    # app.run(debug=True,host='192.168.11.220',port=9900)
 

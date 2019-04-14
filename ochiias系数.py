@@ -5,7 +5,7 @@ import requests
 import json
 import numpy as np
 import pandas as pd
-url = "http://192.168.11.220:9900/ochiias"
+url = "http://127.0.0.1:5000/ochiias"
 filename = "admin2.csv"
 # 获取数据源
 # print("start to read file")
