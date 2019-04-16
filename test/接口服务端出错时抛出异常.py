@@ -5,6 +5,8 @@ from flask import Flask, jsonify
 from flask import request
 
 app = Flask(__name__)
+
+
 # 接口路由地址
 @app.route('/sklearn', methods=['POST'])
 def index():
@@ -29,7 +31,7 @@ def index():
         e = str(e)
         return jsonify(erro=e)
 
-    return jsonify(xx=xx,Y=Y)
+    return jsonify(xx=xx, Y=Y)
 
 
 if __name__ == '__main__':
