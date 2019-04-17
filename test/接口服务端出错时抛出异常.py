@@ -15,7 +15,7 @@ def index():
     data = request.json
 
     # X = [[0., 0.], [1., 1.], [2., 2.], [3., 3.]]
-    X = data["X"]
+    X = data["你"]
     Y = data["Y"]
     # Y = [0., 1., 2., 3.]
     try:
