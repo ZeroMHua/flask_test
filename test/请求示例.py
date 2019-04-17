@@ -18,6 +18,7 @@ data = {
 data=json.dumps(data,ensure_ascii=True)
 headers = {'Content-Type': 'application/json'}
 response = requests.post(url,data,headers=headers)
+
 data1 = response.content.decode(encoding="unicode-escape")
 # data1 = response.content.decode(encoding="utf-8")
 

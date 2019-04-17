@@ -29,6 +29,8 @@ def index():
         xx = xx.tolist()
     except Exception as e:
         e = str(e)
+
+
         return jsonify(erro=e)
 
     return jsonify(xx=xx, Y=Y)
