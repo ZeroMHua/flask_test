@@ -20,8 +20,8 @@ headers = {'Content-Type': 'application/json'}
 response = requests.post(url,data,headers=headers)
 
 data1 = response.content.decode(encoding="unicode-escape")
-# data1 = response.content.decode(encoding="utf-8")
 
+# data1 = response.content.decode(encoding="utf-8")
 # data = data.encode("unicode-escape").decode("utf-8")
 # data = data.encode("unicode-escape").decode("gb18030")
 print(data1)
