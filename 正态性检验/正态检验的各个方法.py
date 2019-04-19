@@ -20,23 +20,25 @@ ls.sort()
 x=kstest(ls, 'norm')
 print(x)
 """
-import numpy
 
-import matplotlib.pyplot as plt
-from scipy.stats import norm
 
-input_list=numpy.random.normal(size=100) # 生成随机数, 这里生成正态分布随机数
+"""
+方法二：
+scipy.stats.normaltest
+normaltest 也是专门做正态性检验的模块
+scipy.stats.normaltest(a, axis=0, nan_policy=’propagate’)
+这里的三个参数都有必要看一下：
+a：待检验的数据
+axis：默认为0，表示在0轴上检验，即对数据的每一行做正态性检验，我们可以设置为 axis=None 来对整个数据做检验
+nan_policy：当输入的数据中有空值时的处理办法。默认为 ‘propagate’，返回空值；设置为 ‘raise’ 时，抛出错误；设置为 ‘omit’ 时，在计算中忽略空值。
 
-input_list.sort() #将input_list从小达到排序
+import numpy as np
+from scipy.stats import normaltest
+x = np.random.randn(10, 20)
+xx = normaltest(x, axis=None)
+print(xx)
+# NormaltestResult(statistic=0.3582062593239369, pvalue=0.83601967652440512)
+"""
 
-n = len(input_list)
-
-y_list = [float(i) / n for i in range(1, n + 1)] # 求观察累积概率y_list
-
-x_list = [norm.ppf(ele) for ele in y_list] # 用累积概率求分位数值x_list
-
-plt.plot(x_list, y_list)
-
-plt.show()
 
 
