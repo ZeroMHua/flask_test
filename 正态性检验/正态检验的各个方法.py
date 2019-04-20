@@ -38,7 +38,15 @@ x = np.random.randn(10, 20)
 xx = normaltest(x, axis=None)
 print(xx)
 # NormaltestResult(statistic=0.3582062593239369, pvalue=0.83601967652440512)
-"""
+# 结果返回两个值：statistic → D值，pvalue → P值
+# p值大于0.05，很可能为正态分布
 
+"""
+import numpy as np
+from scipy.stats import normaltest
+x = np.random.randn(10, 20)
+xx,p = normaltest(x, axis=None)
+if p>0.05:
+    print(222)
 
 
