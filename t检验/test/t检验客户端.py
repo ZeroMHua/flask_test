@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 # Author:hua
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+# Author:hua
 import requests
 import json
 
@@ -10,27 +13,16 @@ url = "http://127.0.0.1:5000/sklearn"
 
 data = {
     "data":[
-        {"第1个参数": [[0., 0.], [1., 1.], [2., 2.], [3., 3.]]},
-        {"第2个参数": [0., 1., 2., 4.]},
-        {"pdic": [1, 0.]}
-    ],
-    "定量变量":2323
-
-    # "第一个参数": [[0., 0.], [1., 1.], [2., 2.], [3., 3.]],
-    # "第二个参数": [0., 1., 2., 4.],
-    # "pdic": [1, 0.]
+        {"第1个参数": [x for x in range(10)]},
+        {"第2个参数": [y for y in range(10,21)] },
+        ]
 }
 data=json.dumps(data,ensure_ascii=True)
 headers = {'Content-Type': 'application/json'}
 response = requests.post(url,data,headers=headers)
 
-
 data1 = response.content.decode(encoding="unicode-escape")
 
-
-# data1 = response.content.decode(encoding="utf-8")
-# data = data.encode("unicode-escape").decode("utf-8")
-# data = data.encode("unicode-escape").decode("gb18030")
 # 获取key为中文的返回值
 data2 = json.loads(data1)
 print(data2)
