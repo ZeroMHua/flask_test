@@ -24,4 +24,7 @@ data1 = response.content.decode(encoding="unicode-escape")
 # data1 = response.content.decode(encoding="utf-8")
 # data = data.encode("unicode-escape").decode("utf-8")
 # data = data.encode("unicode-escape").decode("gb18030")
-print(data1)
+# 获取key为中文的返回值
+data2 = json.loads(data1)["uu"]['你好']
+print(data2)
+

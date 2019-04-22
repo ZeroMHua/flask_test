@@ -33,7 +33,7 @@ def index():
 
         return jsonify(erro=e)
 
-    return jsonify(xx=xx, Y=Y)
+    return jsonify(xx=xx, Y=Y,uu={'你好':[1,0.2,3.5]})
 
 
 if __name__ == '__main__':
