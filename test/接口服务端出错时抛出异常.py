@@ -6,7 +6,6 @@ from flask import request
 
 app = Flask(__name__)
 
-
 # 接口路由地址
 @app.route('/sklearn', methods=['POST'])
 def index():
@@ -38,3 +37,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    # app.run(debug=True,host="192.168.100.106",port=5000)

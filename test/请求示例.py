@@ -4,8 +4,9 @@
 import requests
 import json
 
+# url = "http://192.168.100.106:5000/sklearn"
 url = "http://127.0.0.1:5000/sklearn"
-# url = "http://192.168.11.220:9900/ochiias"
+# url = "http://192.168.11.220:8888/sklearn"
 
 data = {
         # "list1":[x for x in range(1000000)]
