@@ -16,9 +16,15 @@ def index():
     list1 = []
     for key, value in data.items():
         list1.append(key)
-
+    # da1 = [data[key] for key in list1]
+    # print(da1)
+    # 如果传的参数顺序不变
+    # X = [[0., 0.], [1., 1.], [2., 2.], [3., 3.]]
+    # X = data["你"]
     X = data[list1[0]]
+    # Y = data["Y"]
     Y = data[list1[1]]
+    # Y = [0., 1., 2., 3.]
     try:
         reg = linear_model.BayesianRidge()
         reg.fit(X, Y)
@@ -33,7 +39,7 @@ def index():
 
         return jsonify(erro=e)
 
-    return jsonify(uu={list1[1]: xx},yy={list1[0]:{'N值':12,'均值':list1[0]},list1[1]:{'N值':12,'均值':xx}})
+    return jsonify(xx=xx, Y=Y, uu={list1[1]: 0.35},yy={list1[0]:{'N值':12}})
 
 
 if __name__ == '__main__':
