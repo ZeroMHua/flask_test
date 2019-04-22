@@ -25,6 +25,6 @@ data1 = response.content.decode(encoding="unicode-escape")
 # data = data.encode("unicode-escape").decode("utf-8")
 # data = data.encode("unicode-escape").decode("gb18030")
 # 获取key为中文的返回值
-data2 = json.loads(data1)["uu"]['你好']
+data2 = json.loads(data1)["yy"]['年龄']
 print(data2)
 

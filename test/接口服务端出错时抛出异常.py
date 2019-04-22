@@ -30,10 +30,10 @@ def index():
     except Exception as e:
         e = str(e)
 
-
         return jsonify(erro=e)
 
-    return jsonify(xx=xx, Y=Y,uu={'你好':[1,0.2,3.5]})
+    return jsonify(xx=xx, Y=Y, uu={'你好': [1, 0.2, 3.5],
+                                   '好好': 0.35,'95%区间上限':-38.038},yy={'年龄':{'N值':12}})
 
 
 if __name__ == '__main__':
