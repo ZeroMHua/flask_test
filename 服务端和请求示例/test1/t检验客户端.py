@@ -13,10 +13,8 @@ url = "http://127.0.0.1:5000/sklearn"
 
 data = {
     "data":[
-        {"第1个参数": [x for x in range(10)],
-         "第2个参数": [y for y in range(10,21)]},
-
-        {"置信水平":0.95}
+        {"第1个参数": [x for x in range(10)]},
+        {"第2个参数": [y for y in range(10,21)] },
         ]
 }
 data=json.dumps(data,ensure_ascii=True)
@@ -29,5 +27,5 @@ data1 = response.content.decode(encoding="unicode-escape")
 data2 = json.loads(data1)
 # 提取第一个表的信息
 data3 = data2["yy"]["data"][0]['tables'][0]["colNames"]
-print(data2)
+print(data3)
 
