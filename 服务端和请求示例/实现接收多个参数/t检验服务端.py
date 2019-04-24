@@ -10,10 +10,11 @@ from flask import request
 from scipy.stats import ttest_ind
 
 app = Flask(__name__)
-global data3
-data3 = []
+
+
 
 # 接口路由地址
+
 @app.route('/sklearn', methods=['POST'])
 def index():
     import numpy as np
@@ -27,6 +28,7 @@ def index():
     list1 = [[] for _ in range(n)]
     print(list1)
     list2 = []
+    data3 = []
 
     for i in range(n):
         global X
@@ -130,7 +132,7 @@ def index():
     print(data3)
     aq = data3
     print(aq)
-    return jsonify(yy={"data": data3
+    return jsonify(yy={"data": aq
 
     })
 
