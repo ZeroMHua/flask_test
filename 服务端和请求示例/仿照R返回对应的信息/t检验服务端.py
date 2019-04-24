@@ -28,17 +28,6 @@ def index():
     list1 = [[] for _ in range(n)]
     list2 = [[] for _ in range(n)]
 
-    # a = {"parentTitle": "",
-    #      "parentContent": [],
-    #      "title": "",
-    #      "content": [],
-    #      "rowTop": "",
-    #      "colTop": "",
-    #      "rowNames": [x for x in range(n)],
-    #      "combination": False,
-    #      "colNames": ['N值', '均值', '标准差', '最小值', '最大值', '75%位数'],
-    #      "values": []
-    #      }
     a2 = {"parentTitle": "",
           "parentContent": [],
           "title": "",
@@ -51,6 +40,7 @@ def index():
           "values": []
           }
     data1 = []
+    pic_list = []
 
     for i in range(n):
         global X
@@ -105,7 +95,9 @@ def index():
         bfw = X[floor1] + (X[ceil1] - X[floor1]) * (N / 100 * P - floor1)  # also np.percentile(b,10)
 
         list1[i].append(bfw)
-        rFiles = "www.{}".format(name1) + ".com"
+
+        pic_url = "www.{}".format(name1) + ".com"
+
 
         # 先创建前n个表
 
@@ -120,6 +112,16 @@ def index():
              "colNames": ['N值', '均值', '标准差', '最小值', '最大值', '75%位数'],
              "values": []
              }
+        pic ={
+            "parentTitle": "",
+            "title": "",
+            "type": ".png",
+            "path": "",
+            "dependPath": "",
+            "content": [{}],
+            "params": {},
+            "reload": False
+        }
 
         a["values"].append(list1[i])
         a["title"] = name1
@@ -127,6 +129,9 @@ def index():
 
         a2['values'].append(list2[i])
         a2["titles"] = keys
+        pic["title"] = name1+"QQ图"
+        pic['path'] = pic_url
+        pic_list.append(pic)
 
     data1.append(a2)
     aq = [{"code": 0,
@@ -137,6 +142,8 @@ def index():
            "rFiles": [],
            "tables": []}]
     aq[0]["tables"] = data1
+    aq[0]["rFiles"] = pic_list
+
 
     # print(aq)
     return jsonify(yy={"data": aq
