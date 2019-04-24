@@ -14,8 +14,8 @@ url = "http://127.0.0.1:5000/sklearn"
 data = {
     "data": [
         {"第1个参数": [x for x in range(10)],
-         "第2个参数": [y for y in range(110, 121)]
-         # "第三个参数": [z for z in range(20, 31)],
+         "第2个参数": [y for y in range(110, 121)],
+         "第三个参数": [z for z in range(20, 31)]
          # "第4个参数": [z for z in range(120, 131)],
          # "第5个参数": [z for z in range(210, 311)]
          },
