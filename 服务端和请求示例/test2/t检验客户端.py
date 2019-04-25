@@ -7,19 +7,20 @@
 import requests
 import json
 
-# url = "http://192.168.100.106:5000/sklearn"
-url = "http://127.0.0.1:5000/sklearn"
+url = "http://192.168.100.106:5100/sklearn"
+# url = "http://127.0.0.1:5000/sklearn"
 # url = "http://192.168.11.220:5000/sklearn"
 
 data = {
     "data": [
-        {"第1个参数": [x for x in range(10)],
-         "第2个参数": [y for y in range(110, 121)]
-         # "第三个参数": [z for z in range(20, 31)]
+        {"qqq": [x for x in range(10)],
+         "www": [y for y in range(110, 121)],
+         "eee": [z for z in range(20, 31)],
+         "ttt": [z for z in range(20, 31)]
          # "第4个参数": [z for z in range(120, 131)],
          # "第5个参数": [z for z in range(210, 311)]
          },
-        {"置信水平": 0.95}
+        {"rrr": 0.95}
     ]
 }
 data = json.dumps(data, ensure_ascii=True)
