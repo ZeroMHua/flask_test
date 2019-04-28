@@ -1,0 +1,49 @@
+{% extends "news/base.html" %}
+{% block title %}用户概况{% endblock title %}
+{% block script %}
+    <link rel="stylesheet" type="text/css" href="../../static/news/css/jquery.pagination.css">
+    <script type="text/javascript" src="../../static/news/js/jquery.pagination.min.js"></script>
+    <script type="text/javascript" src="../../static/news/js/other.js"></script>
+{% endblock script %}
+
+{% block content %}
+        <div class="user_menu_con fl" data-user-id="{{ author.id }}">
+            <div class="user_center_pic">
+                <img src="{% if author.avatar_url %}{{ author.avatar_url_path }}{% else %}../../static/news/images/user_pic.png{% endif %}" alt="用户图片">
+            </div>
+            <div class="user_center_name">{{ author.nick_name }}</div>
+
+            <ul class="other_detail">
+                <li>性 别：{% if author.gender == "MAN" %}男{% else %}女{% endif %}</li>
+                <li>签 名：{% if author.signature %}{{ author.signature }}{% else %}这个人很懒，什么都没留下{% endif %}</li>
+            </ul>
+            
+            <div class="focus_other">
+                <a href="javascript:;" class="focus" style="display: {% if is_followed %}none;{% else %}inline-block;{% endif %}">关注</a>
+                <a href="javascript:;" class="focused" style="display: {% if is_followed %}inline-block;{% else %}none;{% endif %}"><span class="out">已关注</span><span class="over">取消关注</span></a>
+            </div>
+        </div>
+
+        <div class="user_con fr">
+            <div class="other_collect">
+                <h3>他的文章</h3>
+                <ul class="article_list">
+                </ul>
+                <div id="pagination" class="page"></div>
+                <script>
+                    $(function(){
+                        $("#pagination").pagination({
+                            currentPage: 2,
+                            totalPage: 3,
+                            callback: function(current) {
+                                // alert('ok!');
+                                getNewsList(current);
+                            }
+                        });
+                    });
+                </script>
+            </div>
+
+        </div>        
+{% endblock content %}
+{% block rank_con %}{% endblock rank_con %}
