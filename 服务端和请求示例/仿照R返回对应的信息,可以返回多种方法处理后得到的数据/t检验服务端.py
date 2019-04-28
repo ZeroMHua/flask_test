@@ -11,7 +11,6 @@ from scipy.stats import ttest_ind
 
 app = Flask(__name__)
 
-
 # 接口路由地址
 
 @app.route('/sklearn', methods=['POST'])
