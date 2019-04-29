@@ -9,10 +9,6 @@ app = create_app('development')
 # 创建Manager对象
 manager = Manager(app)
 
-# 添加命令行迁移命令db
-@app.route('/index')
-def index():
-    return 'index'
 
 
 if __name__ == '__main__':
