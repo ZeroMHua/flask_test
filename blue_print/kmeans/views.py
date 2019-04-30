@@ -5,6 +5,7 @@ from flask import jsonify, request
 
 from . import kmeans_blue
 
+# 2 使用蓝图注册路由
 @kmeans_blue.route('/sklearn', methods=['POST'])
 def index():
     import numpy as np
