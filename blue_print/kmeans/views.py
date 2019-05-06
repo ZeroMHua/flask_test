@@ -5,6 +5,7 @@ from flask import jsonify, request
 
 from . import kmeans_blue
 
+
 # 2 使用蓝图注册路由
 @kmeans_blue.route('/sklearn', methods=['POST'])
 def index():
@@ -35,7 +36,6 @@ def index():
     pic_list = []
 
     for i in range(n):
-
         X = values[i]
 
         name1 = keys[i]
@@ -43,26 +43,22 @@ def index():
         list1[i] = [[] for _ in range(3)]
 
         # 方法一
-        qq = i*9
-        ww = i+6
+        qq = i * 9
+        ww = i + 6
         list1[i][0].append(qq)
         list1[i][0].append(ww)
         # 方法二
-        q2 = i+1
-        w2 = i+2
+        q2 = i + 1
+        w2 = i + 2
         list1[i][1].append(q2)
         list1[i][1].append(w2)
         # 方法三
-        q3 = i+i*5
-        w3 = i*8
+        q3 = i + i * 5
+        w3 = i * 8
         list1[i][2].append(q3)
         list1[i][2].append(w3)
 
-        pic_url = "www."+name1+".com"
-
-
-
-
+        pic_url = "www." + name1 + ".com"
 
         # 先创建前n个表
 
@@ -77,7 +73,7 @@ def index():
              "colNames": ['N值', '均值'],
              "values": []
              }
-        pic ={
+        pic = {
             "parentTitle": "",
             "title": "",
             "type": ".png",
@@ -94,7 +90,7 @@ def index():
 
         a2['values'].append(list2[i])
         a2["titles"] = keys
-        pic["title"] = name1+"QQ图"
+        pic["title"] = name1 + "QQ图"
         pic['path'] = pic_url
         pic_list.append(pic)
 
@@ -109,8 +105,5 @@ def index():
     aq[0]["tables"] = data1
     aq[0]["rFiles"] = pic_list
 
-
     # print(aq)
-    return jsonify(yy={"data": aq
-
-                       })
+    return jsonify(yy={"data": aq})
