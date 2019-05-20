@@ -1,0 +1,203 @@
+Abstract （摘要）
+Kwd（关键字）
+Title （标题）
+Detail_url （详情页连接）
+Content（文章全文）
+domain_name（域名）
+now_time（当前时间）
+
+
+ps -ef|grep ist     查看
+看 ist文件夹内相关的进程
+
+mv xxx.py xxx.py12  备份xxx.py
+[root@server1 ist]# kill -9 30144
+
+[root@server1 ist]# tail -f logs/ist.log   展示日志
+
+
+
+
+
+用cgroup限制Python脚本的运行内存：
+cgexec -g memory:memory100M?python3 aaa.py
+
+统计文件夹下文件个数：
+/data/wordcloud/python/test/test2/100
+ls -l |grep "^-"|wc -l
+添加可执行权限
+chmod a+x test2.py
+python3 test2.py
+chmod a+x test3.py
+python3 test3.py
+zip -r 11.zip ./*
+cd /data/wordcloud/python/fenbushidata/5baiwan/fenbushi2/code10/PMC/PMC/1
+sz 11.zip
+cd /data/wordcloud/python/fenbushidata/4baiwan/fenbushi1/code1/PMC/PMC/1
+
+退出xshell后程序后台运行
+cd /data/wordcloud/python/fenbushidata/5baiwan/fenbushi2/code2/PMC/PMC/1/2
+
+
+
+
+实例：压缩服务器上当前目录的内容为xxx.zip文件
+
+zip -r 11.zip ./*
+批评pip3创建软连接：
+ln -sv /usr/local/python3/bin/pip3 /usr/bin/pip3
+/usr/local/python3/bin/pip3
+
+curl -H "Content-Type: application/json"  -XPOST 192.168.100.102:9201/test5/docs/_bulk?pretty --data-binary @zhihui.json
+
+pip3 install lxml-3.7.3-cp36-cp36m-win_amd64.whl
+aid-business-metadata-0.0.1-SNAPSHOT.jar
+查看当前索引
+curl '127.0.0.1:5100/_cat/indices?v'
+curl '127.0.0.1:5100/_cat/indices?v'
+curl '127.0.0.1:5100/_cat/indices?v'
+
+词云服务器的kibana地址：
+/service/kibana/kibana-6.4.0-linux-x86_64/
+./bin/kibana
+进程号：8495
+nohup ./bin/kibana &
+
+106上面的kibana 地址：
+/data/es/kibana
+./bin/kibana
+nohup python3 keyword6.py &
+
+查看进程
+ps aux | less
+退出xshell后程序后台运行
+nohup scrapy crawl contents &
+
+linux里删除文件或者文件夹下所有文件的方法如下：
+1、rm -rf 文件名 
+
+实例：压缩服务器上当前目录的内容为xxx.zip文件
+
+zip -r 11.zip ./*
+
+解压zip文件到当前目录
+
+unzip filename.zip
+
+
+C:\Program Files\Intel\iCLS Client\;%JAVA_HOME%\bin;%JAVA_HOME_JRE%\bin
+fenbushi 地址
+cd /data/wordcloud/python/test5/fenbushi4
+
+
+运行命令sz filename (sz hua.txt) 就是发文件到windows上（保存的目录是可以配置）
+
+
+获取baidu_answer索引下类型为external，id为1的数据，pretty参数表示返回结果格式美观
+
+curl -XGET '127.0.0.1:5100/baidu_answer/external/14540?pretty'
+curl -XGET '127.0.0.1:5100/baidu_answer/14540?pretty'
+
+curl -XGET '127.0.0.1:5100/baidu_answer/doc/_search
+
+.删除索引 DELETE
+curl -XDELETE '127.0.0.1:5100/test3?pretty'
+curl -XDELETE '127.0.0.1:5100/test8?pretty'
+curl -XDELETE '127.0.0.1:5100/wordcloud_2018?pretty'
+
+
+//span[contains(text(),"mla")]/..//text()
+
+在kibana中查询数据
+ GET wordcloud_*/wordcloud/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+根据某个字段查询信息：
+POST wordcloud_2018_12/_search
+{
+  "query": {
+    "exists": {
+      "field": "kwd"
+    }
+  },
+  "_source": "kwd"
+}
+
+建立索引和type并制定某个索引的类型
+PUT wordcloud
+{
+  "mappings": {
+    "docs": {
+      "properties": {
+        "publish_date": {
+          "type": "date" 
+        }
+      }
+    }
+  }
+}
+
+POST /wordcloud_2018_11/wordcloud/_search
+{
+"_source": "kwd", 
+  "query": {
+    "bool": {
+      "must": {
+        "exists": {
+          "field": "kwd"
+        }
+      }
+    }
+  }
+}
+更新某个符合条件的字段
+POST test3/docs/_update_by_query
+{
+  "script": {
+    "lang": "painless",
+    "inline": "if (ctx._source.doi== 0) {ctx._source.doi= 10}"
+  }
+}
+
+数据量大时修改某个特定条件的字段
+POST wordcloud_2018/wordcloud/_update_by_query
+{
+  "script": {
+    "inline": "ctx._source.wf=1;ctx._source.wf=0"
+  },
+  "query": {
+    "match": {
+      "wf": 1
+    }
+  }
+}
+
+
+
+http://ip地址/wordcloud/wordcloud.git
+tanmenghua1@aidcloud.cn
+
+4、把/home目录下面的wwwroot.zip直接解压到/home目录里面
+unzip wwwroot.zip
+
+
+
+
+
+
+
+class ContentsSpider(scrapy.Spider):
+    name = "contents"
+    allowed_domains = ["baidu.com"]
+    start_urls = ['http://baidu.com/']
+
+class PmcSpiderMiddleware(object):
+
+
+class PmcPipeline(object):
+
+
