@@ -3,13 +3,11 @@
 # Author:hua
 from flask import Flask
 from Machine_Learning.KNN import KNN_blue
-from Machine_Learning.test import test_blue
 
 app = Flask(__name__)
 
 # 将蓝图注册到app
-app.register_blueprint(KNN_blue, url_prefix='/KNNS')
-app.register_blueprint(test_blue, url_prefix='/test')
+app.register_blueprint(KNN_blue, url_prefix='/KNNSS')
 
 if __name__ == '__main__':
     # print(app.url_map)

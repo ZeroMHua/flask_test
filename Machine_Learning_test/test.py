@@ -8,18 +8,18 @@ import requests
 import json
 import time
 # url = "http://192.168.100.106:5000/sklearn"
-url = "http://127.0.0.1:5000/KNNSS/KNN"
+url = "http://127.0.0.1:5000/test/test1"
 # url = "http://192.168.11.220:5000/sklearn"
 start_time = time.time()
 data = {
     "data": [
-        {"filename": "420testdata.csv"},
-        {"tab_list":['住院天数', '年龄', '咳嗽', '流涕', '呼吸音粗', '性别']},
-        {"vars_c":['住院天数', '年龄']},
-        {"vars_d":['咳嗽', '流涕', '呼吸音粗']},
-        {"target":['性别']},
-        {"testdata":None},
-        {"n_neighbors":6}
+        {"filename": "1"}
+        # {"tab_list":['住院天数', '年龄', '咳嗽', '流涕', '呼吸音粗', '性别']},
+        # {"vars_c":['住院天数', '年龄']},
+        # {"vars_d":['咳嗽', '流涕', '呼吸音粗']},
+        # {"target":['性别']},
+        # {"testdata":None},
+        # {"n_neighbors":6}
     ]
 }
 data = json.dumps(data, ensure_ascii=True)
