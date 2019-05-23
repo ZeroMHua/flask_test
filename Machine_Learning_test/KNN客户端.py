@@ -8,7 +8,8 @@ import requests
 import json
 import time
 # url = "http://192.168.100.106:5000/sklearn"
-url = "http://127.0.0.1:5000/KNNSS/KNN"
+url = "http://192.168.100.106:5000/KNNS/KNN"
+# url = "http://127.0.0.1:5000/KNNSS/KNN"
 # url = "http://192.168.11.220:5000/sklearn"
 start_time = time.time()
 data = {

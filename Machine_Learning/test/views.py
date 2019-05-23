@@ -128,8 +128,8 @@ def KNNS():
     plt.plot(fpr_test, tpr_test, color='b')
     plt.plot(fpr_train, tpr_train, color='r')
     plt.title('ROC曲线')
-    save_path = "./Roc_curve.jpg"
-    plt.savefig("./Roc_curve.jpg")
+    save_path = "./Roc_curve.png"
+    plt.savefig("./Roc_curve.png")
     # plt.show()
 
     "输出结果3：若存在测试数据集，则输出数据框dataframe"
